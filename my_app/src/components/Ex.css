@@ -1,0 +1,57 @@
+/* Ex02CSS */
+#root .pStyle{
+  color: dodgerblue;
+}
+
+/* Ex03CSS */
+.header {
+position: fixed; /* 상단 고정 */
+top: 0;
+left: 0;
+width: 100%;
+padding: 20px; /* 여백 추가 */
+background-color: skyblue;
+box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* 그림자 */
+}
+main {
+margin: 200px auto;
+}
+.footer {
+position: fixed; /* 하단 고정 */
+left: 0;
+bottom: 0;
+width: 100%;
+padding: 10px;
+background-color: lightgray;
+text-align: center;
+}
+
+/* EX06 */
+.gallery{
+  width: 500px;
+  border-radius: 1px solid black;
+  border-radius: 10px;
+}
+img{
+  width: 450px;
+}
+
+/* EX08 */
+.menuWrap{
+  width: 200px;
+  height: 200px;
+  border-radius: 10px;
+  border: 1px solid gray;
+  text-align: center;
+  margin-top: 10px;
+}
+.menuWrap h2{
+  margin-top: 37px;
+}
+.pDesc{
+  color: gray;
+}
+.pPrice{
+  font-size: 20px;
+  color: red;
+}
