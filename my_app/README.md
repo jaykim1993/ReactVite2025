@@ -23,14 +23,14 @@ If you are developing a production application, we recommend using TypeScript wi
 
 
 # react 핵심 기술
-        | 기술 요소                              | 역할                                                            |
-        | ---------------------------------- | ------------------------------------------------------------- |
-        | **JSX (JavaScript XML)**           | JavaScript 안에서 HTML처럼 UI를 선언적으로 작성할 수 있는 문법                   |
-        | **Virtual DOM**                    | 실제 DOM 조작 전, 메모리상에서 변경점을 계산하기 위한 가상 DOM 객체                    |
-        | **Reconciliation (조정 과정)**         | 이전 Virtual DOM과 새로운 Virtual DOM을 비교하여 실제 DOM을 최소한으로 업데이트하는 과정 |
-        | **ReactDOM.render**                | React 컴포넌트를 실제 브라우저 DOM에 연결(render)하는 함수                      |
-        | **Hooks (예: useState, useEffect)** | 함수형 컴포넌트에서도 상태(state)와 생명주기 기능을 사용할 수 있게 해주는 기능               |
-        | **Event Handling**                 | onClick, onChange 등 이벤트를 통해 사용자 상호작용을 처리하는 기능                 |
+| 기술 요소                              | 역할                                                            |
+| ---------------------------------- | ------------------------------------------------------------- |
+| **JSX (JavaScript XML)**           | JavaScript 안에서 HTML처럼 UI를 선언적으로 작성할 수 있는 문법                   |
+| **Virtual DOM**                    | 실제 DOM 조작 전, 메모리상에서 변경점을 계산하기 위한 가상 DOM 객체                    |
+| **Reconciliation (조정 과정)**         | 이전 Virtual DOM과 새로운 Virtual DOM을 비교하여 실제 DOM을 최소한으로 업데이트하는 과정 |
+| **ReactDOM.render**                | React 컴포넌트를 실제 브라우저 DOM에 연결(render)하는 함수                      |
+| **Hooks (예: useState, useEffect)** | 함수형 컴포넌트에서도 상태(state)와 생명주기 기능을 사용할 수 있게 해주는 기능               |
+| **Event Handling**                 | onClick, onChange 등 이벤트를 통해 사용자 상호작용을 처리하는 기능                 |
 
 
 # JSX(javaScript XML)
