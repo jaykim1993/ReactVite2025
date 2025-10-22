@@ -3,39 +3,52 @@ import './App.css'
 import './components/Ex.css'
 
 
-// import Ex13 from './components/Ex13.jsx'
-// import { Parent } from './propsComponents/parent.jsx';
-// import { Parent02 } from './propsComponents/welcome.jsx';
-// import  Parent04  from './propsComponents/button01.jsx';
-// import  Parent04  from './propsComponents/button01.jsx';
-// import  Welcome  from './propsComponents/Props01.jsx';
-// import  Usercard  from './propsComponents/Props02.jsx';
-// import  Product  from './propsComponents/Props03.jsx';
-// import  Button  from './propsComponents/Props04.jsx';
-// import  Counter01  from './propsComponents/useState01.jsx';
-// import  Counter02  from './propsComponents/useState02.jsx';
-import Alert from './propsComponents/Props06.jsx';
+// import Exstate01 from './stateComponents/Ex01.jsx';
+// import Exstate02 from './stateComponents/Ex02.jsx';
+// import Exstate03 from './stateComponents/Ex03.jsx';
+// import Exstate04 from './stateComponents/Ex04.jsx';
+// import Exstate05 from './stateComponents/Ex05.jsx';
+// import Exstate06 from './stateComponents/Ex06.jsx';
+// import Exstate07 from './stateComponents/Ex07.jsx';
+// import Exstate08 from './stateComponents/Ex08.jsx';
+// import Exstate09 from './stateComponents/Ex09.jsx';
+// import Exstate10 from './stateComponents/Ex10.jsx';
+// import Exstate11 from './stateComponents/Ex11.jsx';
+// import Shallow from './stateComponents/Ex12_Shallow.jsx';
+// import Exstate13 from './stateComponents/Ex13.jsx';
+// import Exstate14 from './stateComponents/Ex14.jsx';
+// import Exstate15 from './stateComponents/Ex15.jsx';
+// import Exstate16 from './stateComponents/Ex16.jsx';
+// import Exstate17 from './stateComponents/Ex17.jsx';
+// import Exstate18 from './stateComponents/Ex18.jsx';
+import Blog from './stateComponents/Blog.jsx';
+
 
 function App() {
   
   
   return (
     <>
-        {/* < Welcome name = '개나리'/>
-        < Usercard name = '개나리' age={18} city='서울'/>
-        < Usercard name = '김백합' age={40} city='경기'/>
-        < Usercard name = '최영숙' age={25} city='인천'/>
-        < Product name='노트북' price={120000}/>
-        < Product name='마우스' price={15000}/>
-        < Button text='제출'/>
-        < Button text='종료'/>
-        < Button text='클릭'/>
-        < Counter01/> */}
-        {/* < Counter02/> */}
-        < Alert text='error' msg='오류'/>
-        < Alert text='sucess' msg='성공'/>
-        < Alert text='randomword' msg='틀린값'/>
-        < Alert text='ded' msg='경고'/>
+        {/* <Exstate01 /> */}
+        {/* <Exstate02 /> */}
+        {/* <Exstate03 /> */}
+        {/* <Exstate04 /> */}
+        {/* <Exstate05 /> */}
+        {/* <Exstate06 /> */}
+        {/* <Exstate07 /> */}
+        {/* <Exstate08 /> */}
+        {/* <Exstate09 /> */}
+        {/* <Exstate10 /> */}
+        {/* <Exstate11 /> */}
+        {/* <Shallow /> */}
+        {/* <Exstate13 /> */}
+        {/* <Exstate14 />
+        <Exstate15 />
+        <Exstate16 />
+        <Exstate17 /> */}
+        {/* <Exstate18 /> */}
+        <Blog />
+
     </>
   )
 }

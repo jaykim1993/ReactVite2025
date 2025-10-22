@@ -33,7 +33,7 @@ import './Ex.css'
 //   )
 // }
 // import Ex01 from './compents/Ex01.jsx'
-import Ex03 from './components/Ex03.jsx'
+import Ex03 from '../src/components/Ex03.jsx'
 
 // function App() {}
 //  => react에서 App()는 컴포넌트라 부른다.
@@ -94,8 +94,8 @@ function App() {
           {/* </div>
         ))} */}
 
-        <Ex02 />
-      
+        {/* <Ex02 />
+       */}
     </>
   )
 }

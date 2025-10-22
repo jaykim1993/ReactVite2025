@@ -1,24 +1,9 @@
-# React + Vite
-
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
-
-Currently, two official plugins are available:
-
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
-
-## React Compiler
-
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
-
-## Expanding the ESLint configuration
-
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+### React + Vite
 
 
 ## 2025-10-20
 # React
-        • 자바스크립트로 만든 UI(화면) 라이브러리야.
+        • 자바스크립트로 만든 UI(화면) 라이브러리
         • 화면을 컴포넌트 단위로 나눠서 효율적으로 관리
 
 
@@ -93,7 +78,7 @@ If you are developing a production application, we recommend using TypeScript wi
         • cd my_app : cd 는 자식 폴더로 이동할때
 # main.jsk 내 import : 외부 파일을 가져오기
 
-## 2025-10-20
+## 2025-10-21
 
 # inlineCSS
         • style 내에서 조건문 심을 수 있다(삼항연산자 추천)
@@ -112,6 +97,21 @@ If you are developing a production application, we recommend using TypeScript wi
         • 컴포넌트를 효율적으로 재사용
        
 # Hook
+        • 클래스 없이도 상태 관리와 생명주기 제어를 가능하게 해주는 기능
+| 구분          | Hook 사용하는 이유                                   | 얕은 복사 사용하는 이유                              |
+| ----------- | ---------------------------------------------- | ------------------------------------------ |
+| **핵심 목적**   | 함수형 컴포넌트에서도 상태(state)와 생명주기를 제어하기 위해           | React가 상태 변경을 감지하도록 “새로운 참조값”을 만들어주기 위해    |
+| **해결하는 문제** | 클래스 컴포넌트의 복잡함(`this`, 생명주기 메서드 등)을 단순화         | 원본 배열/객체 변경 시 React가 리렌더링하지 않는 문제          |
+| **관련 기능**   | `useState`, `useEffect`, `useRef`, `useMemo` 등 | `setState([...array])`, `setObj({...obj})` |
+| **원리적 공통점** | 둘 다 React의 “상태는 불변해야 한다(immutable)”는 원칙에 따름    | React의 “참조 주소가 달라야 변경으로 인식” 원칙에 따름         |
+        • 📦 Hook은 “React에게 상태를 관리할 수 있는 도구를 주는 것”
+                🪞 얕은 복사는 “React에게 상태가 정말로 바뀌었다고 알려주는 신호를 주는 것”
+        • ✅ 공통점:
+                둘 다 React가 상태 변화를 감지하고 리렌더링을 트리거하기 위한 메커니즘과 관련 있다.
+                즉, 둘 다 불변성(immutability) 원칙 위에서 작동한다.
+        • ❌ 차이점:
+                Hook은 “상태 관리 도구”
+                얕은 복사는 “상태 변경을 감지시키는 방법”
         • 동적으로 변해야하는 경우 사용
         • 함수형 컴포넌트 안에서 리액트의 기능
           (상태 관리, 생명주기 등)을 사용할 수 있게 해주는 함수
@@ -133,3 +133,77 @@ If you are developing a production application, we recommend using TypeScript wi
 | **useImperativeHandle** | `forwardRef`와 함께 사용. 부모가 자식 컴포넌트의 **특정 메서드만 접근** 가능하게 함. | 커스텀 컴포넌트에서 내부 메서드 노출 시 사용             |
 
 # export default function
+        • 컴포넌트 밑에 따로 export 쓸 필요 없게 함
+
+
+## 2025-10-22
+
+# 조건문 사용법
+| 상황            | 권장 방법                  |
+| ------------- | ---------------------- |
+| JSX 내부 간단한 조건 | 삼항 연산자, &&             |
+| 복잡한 조건 분기     | JSX 밖에서 if문            |
+| 조건부 렌더링 X     | null 반환                |
+| 스타일 조건부       | 삼항연산자 or classnames 사용 |
+| 여러 조건         | 조기 return으로 가독성 확보     |
+
+# JSX에서 style 속성은 문자열이 아니라 “객체”여야 함
+        • 첫 번째 중괄호 { ... } → JSX 안에서 자바스크립트 표현식을 넣는다는 의미
+        • 두 번째 중괄호 { key: value } → 실제로 전달할 JS 객체 리터럴
+                • style={{ backgroundColor: color }}
+                   => “style 속성에 { backgroundColor: color }라는 JS 객체를 전달하겠다.”
+
+# 🧩 JSX 중괄호 {} 사용 3가지 상황 정리
+| 구분                    | 사용 위치                    | 예시 코드                                                                 | 의미 / 작동 방식                                            | 주의할 점                                                             |
+| --------------------- | ------------------------ | --------------------------------------------------------------------- | ----------------------------------------------------- | ----------------------------------------------------------------- |
+| **① JSX 내부 (표현식)**    | JSX 안에서 값이나 연산 결과를 출력할 때 | `jsx <p>{name}</p> <h2>{age + 1}</h2> `                               | JSX는 HTML처럼 보이지만 실제로 JS이므로 `{}` 안에 변수, 계산식, 함수 호출 가능  | `{}` 안에는 **표현식(Expression)** 만 가능, 문(Statement)인 `if`, `for`는 불가능 |
+| **② 속성값에 표현식 전달**     | props나 속성 값으로 변수를 전달할 때  | `jsx <img src={imgUrl} /> <input disabled={isDisabled} /> `           | 속성값에 문자열 대신 **JS 변수나 논리값** 전달 가능                      | 문자열은 따옴표 `" "`로, 변수/표현식은 `{ }`로 구분                                |
+| **③ style 속성에 객체 전달** | 인라인 스타일을 객체로 작성할 때       | `jsx <div style={{ backgroundColor: color, width: size + 'px' }} /> ` | JSX의 `style`은 **문자열이 아니라 JS 객체**를 받음. 그래서 **중괄호가 2겹** | 1겹은 JSX 표현식, 1겹은 객체 리터럴 — 객체 안에서는 변수 그대로 사용 (`{color}` ❌)         |
+
+
+
+# Shallow Copy(얉은 복사)
+                • 얕은 복사란 객체나 배열을 겉부분만 복사하고, 
+                  내부의 중첩된 객체나 배열은 원본과 같은 참조(주소)를 공유하는 복사 방법
+                • 객체나 배열을 새로운 메모리 공간에 복사하는 것
+                • 참조(reference)를 공유하지 않고 최상위 속성만 복사
+        # React에서 state를 직접 수정하지 않고 얕은 복사를 사용하는 이유
+                • React는 상태 변화를 감지해야 재렌더링을 함
+                        • React는 state나 props의 주소(참조값)가 바뀌었는지 비교해서 변경 여부를 판단한다.
+                        • 만약 기존 객체/배열을 그대로 수정하면 참조가 바뀌지 않아서 React가 변화를 감지하지 못함.
+                • 불변성(Immutable) 유지
+                        • 원본 state를 직접 수정하면 다른 컴포넌트나 이전 상태를 참조하는 로직이 예상치 못한 버그를 발생시
+                        킬 수 있음.
+                        • 얕은 복사로 새 객체를 만들고 변경하면 안전하게 상태를 관리할 수 있음.
+| 잘못된 방법         | 올바른 방법                   |
+| -------------- | ------------------------ |
+| `item.push()`  | `setItem([...item, 새값])` |
+| 기존 배열 직접 수정    | 새로운 배열 생성 후 교체           |
+| React가 변경 감지 X | React가 변경 감지 O           |
+
+# 얉은 복사 필요한 이유
+                • 리액트에서는 상태(state)가 참조형 데이터(배열, 객체)일 경우, 
+                기존 참조주소 를 그대로 사용하면 변경을 감지하지 못하기 때문에, 
+                얕은 복사(shallow copy) 를 사용하여 새로운 참조주소를 가진 배열로 만들어야 한다.
+| 구분                     | 설명                                                                        | 예시 코드                                                       | 결과                 |
+| ---------------------- | ------------------------------------------------------------------------- | ----------------------------------------------------------- | ------------------ |
+| **1️⃣ 기본 원칙**          | React는 상태(state)가 “값이 바뀌었는지”를 **참조 주소(reference)** 기준으로 판단한다.             | `setItem(item)`                                             | 주소가 동일하면 **렌더링 X** |
+| **2️⃣ 상태 변경 시 주의점**    | 배열/객체는 힙(Heap) 메모리에 저장되므로, `push`, `pop`, `splice` 등은 **원본 배열을 직접 변경**한다. | `item.push('A')`                                            | ❌ 불변성 깨짐           |
+| **3️⃣ 올바른 방법 (얕은 복사)** | 기존 배열을 복사하고 새 요소를 추가 → **새로운 주소 생성**                                      | `setItem([...item, 'A'])`                                   | ✅ 렌더링 O            |
+| **4️⃣ 객체 업데이트 시**      | 객체도 같은 원리로, `...` 전개 연산자를 사용해 새로운 객체를 만들어야 함                              | `setUser({...user, name:'홍길동'})`                            | ✅ 렌더링 O            |
+| **5️⃣ 얕은 복사란?**        | 배열 또는 객체의 **1단계 값만 복사**하는 것. 내부에 또 객체가 있으면 참조 주소를 공유함.                    | `const copy = [...arr]`                                     | 1단계만 복사            |
+| **6️⃣ 깊은 복사란?**        | 내부의 중첩 객체까지 **완전히 새로운 참조**로 복사하는 것.                                       | `structuredClone(obj)`<br>`JSON.parse(JSON.stringify(obj))` | 모든 단계 복사           |
+| **7️⃣ 불변성 유지 이유**      | React의 **리렌더링 최적화(Virtual DOM diff)** 가 빠르게 작동하도록 도와줌                     | —                                                           | ✅ 성능 향상            |
+
+# 인풋박스에서 엔터키 누를 시 값 버튼 클릭과 같은 효과 주기
+                • 엔터키 감지 컴포넌트:
+                        const EnterPress = (e) => {
+                                if (e.key === "Enter") {
+                                        e.preventDefault(); // 엔터로 인한 폼 제출 방지
+                                        Resetter();
+                                }};
+                • <input> 내 추가할 요소 값:
+                       •  value={output} 
+                                => input의 현재 값(state)을 연결
+                       •  onKeyUp={EnterPress} 
+                                => 엔터키 이벤트 연결

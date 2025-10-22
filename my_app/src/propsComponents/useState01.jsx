@@ -16,3 +16,4 @@ export default function Counter01(){
 // 웹화면상에서 변화 x
 // => 메모리 상에서는 값이 변경되었지만 
 // 리액트는 변경된 값을 알지 못한다.
+    // => useState() 필요하다!
