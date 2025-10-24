@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { TodoChild } from "./TodoListChild.jsx";
+import TodoChild from "./TodoListChild.jsx";
 
 export default function TodoList() {
   const [list, setList] = useState([

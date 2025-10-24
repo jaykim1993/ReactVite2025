@@ -1,13 +1,17 @@
 import React, { useState } from "react";
+import './Blog.css';
+// 얉은 복사 해서 진짜 배열에 set 적용해서 업데이트 방식이다
+// 얉은 복사 후 계속 얉은 복사된 배열만 사용 하는건 아직 무리
 
+// 로직함수 생성 후 return 내 태그에 지정하는 방식
 export default function Blog() {
 
 
   const [posts, setPosts] = useState(['남자코트 추천','강남 우동맛집','파이썬 독학']);
   const [inputValue, setInputValue] = useState('');
   const [likes, setLikes] = useState([0,0,0]);
-  // const [modalOpen, setModalOpen] = useState(false);
-  // const [selected, setSelected] = useState(0);
+  const [modalOpen, setModalOpen] = useState(false);
+  const [selectedIndex, setSelectedIndex] = useState(null);
 
  
 
@@ -71,40 +75,69 @@ export default function Blog() {
       // 배열값 출력
       <>
         {posts.map((posts, index) => (
-          <div key={index} 
-          style={{width:'500px', 
-          height:'300px', 
-          border:'1px solid black', 
-          lineHeight:'70px',
-          borderRadius:'10px',
-          margin:'20px'}}>
-            <button type="button" onClick={()=>LikeCounter(index)} style={{fontSize:'20px', marginTop:'40px'}}>
-              {posts} 👍 {likes[index]}
+          <div className='wrap' 
+          key={index} 
+          >
+            <h2 className='title' onClick={()=>{setModalOpen(true); setSelectedIndex(index)}}>{posts}</h2>
+            <button type="button" onClick={()=>LikeCounter(index)}>
+               👍 {likes[index]}
             </button>
-            <p>11월 1일 발생</p>
+            <p>날짜: 11월 1일</p>
             <button type="button" onClick={()=>DeletePost(index)}>삭제</button>
           </div>
         ))}
-        
-        
         <input 
           type="text" 
           placeholder="입력하세요"
           value={inputValue}
           onChange={AddInput}
           onKeyUp={EnterPress} // 엔터키 이벤트 연결
-          style={{ outline: "none" }}
         />
-        <button type="button" onClick={AddPost}>
+        <button className='postBtn' type="button" onClick={AddPost}>
           글 발행
         </button>
+        {modalOpen && 
+        <Modal 
+          color = {'lightgray'} 
+          posts = {posts} 
+          setPosts = {setPosts}
+          selectedIndex = {selectedIndex}
+          modalOpen = {modalOpen}
+          onClose={()=>setModalOpen(false)}
+        />
+        }
       </>
   );
 }
 
+// 자식 컴포넌트 (모달)
+function Modal(props){
+  // 업데이트 함수
+  const Update =()=> {
+    // posts 얉은 복사
+    const shallowPosts = [...props.posts];
 
-// 얉은 복사 해서 진짜 배열에 set 적용해서 업데이트 방식이다
-// 얉은 복사 후 계속 얉은 복사된 배열만 사용 하는건 아직 무리
+    // 특정 인덱스에 해당되는 포스트 선택 시 프롬프트 창 뜨고 입력 후, 해당 포스트에 업데이트
+    // 1. prompt("새 제목을 입력하세요")
+    shallowPosts[props.selectedIndex] = 
+    prompt('새 제목을 입력하세요', shallowPosts[props.selectedIndex]) 
+    || shallowPosts[props.selectedIndex];
+    // 2. 수정한 글 제목 update
+    props.setPosts(shallowPosts)
+  }
 
-// 로직함수 생성 후 return 내 태그에 지정하는 방식
+
+
+  return(
+    <div className="overray">
+      <div className="modal" style={{background:props.color}}>
+          <h4>{props.posts[props.selectedIndex]}</h4>
+          <p>날짜: 11월 1일</p>
+          <p>상세내용: 여기에 내용을 넣어보세요.</p>
+          <button onClick={Update}>글 수정</button>
+          <button onClick={props.onClose}>닫기</button>
+      </div>
+    </div>
+  )
+}
 

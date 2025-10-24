@@ -1,10 +1,6 @@
 import React, { useState } from "react";
 export default function MovieReview() {
 
-  const [reviews, setReviews] = useState([
-  { id:0, title: '인셉션', comment: '꿈속의 꿈! 최고였어요.', likes: 0 },
-  { id:1, title: '인터스텔라', comment: '음악이 너무 웅장해요.', likes: 0 },
-  ]);
   const [inputTitle, setInputTitle] = useState('');
   const [inputComments, setInputComment] = useState('');
 
@@ -101,9 +97,6 @@ const LikeCounter = (index) => {
           </div>
         ))}
 
-
-
-        
       </>
   );
 }

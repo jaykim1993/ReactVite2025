@@ -38,7 +38,7 @@ export const TodoChild = (props) => {
           >
             <h4
               style={{
-              width: "100px",
+              width: "150px",
               textDecoration: item.completed ? "line-through" : "none",
               color: item.completed ? "#888" : "black",
               }}
