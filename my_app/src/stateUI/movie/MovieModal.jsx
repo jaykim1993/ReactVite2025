@@ -12,7 +12,6 @@ export default function MovieModal(props) {
   }
 
   return (
-
       <div className='overray'>
         <div className='modal'>
           <h2 className="likeBtn" type="button" onClick={() => props.LikeCounter(props.selectedIndex)}>{props.reviews[props.selectedIndex].title} 👍 {props.reviews[props.selectedIndex].likes}</h2>

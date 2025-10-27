@@ -10,6 +10,7 @@
   display:inline-block;
   width:200px;
   margin-top:50px;
+  cursor: pointer;
 }
 button{
   font-size: 18px;

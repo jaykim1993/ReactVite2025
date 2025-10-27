@@ -20,6 +20,7 @@ export default function MovieInputTools(props) {
         setInputTitle('');
         setInputComment('');
       };
+      console.log(props.reviews);
   // 인풋값 받기
       const AddTitle =(e) => {
         setInputTitle(e.target.value)
