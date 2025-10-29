@@ -1,20 +1,5 @@
 export default function CartModal(props){
 
-    // const minusQty = (index) => {
-    //     if(cartCopy[index].quantity>0){
-    //         cartCopy.quantity --;
-    //     } else alert('1개 이상 담겨야 합니다.')
-    //     setCart(cartCopy);
-    // };
-
-    // const plusQty = (index) => {
-    //     if(cartCopy[index].quantity>0){
-    //         cartCopy[index].quantity --;
-    //     } else alert('1개 이상 담겨야 합니다.')
-    //     setCart(cartCopy);
-    // };
-
-
     return(
         <>
             <div>

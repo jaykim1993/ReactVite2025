@@ -20,7 +20,16 @@ import './App.css'
 // import BlogC from './stateComponents/Blog/blogc.jsx';
 // import Newmovie from './stateUI/movie_선생님/MovieApp.jsx';
 // import ShopApp from './stateUI/shop/ShopApp'
-import FoodApp from './stateUI/food/FoodApp'
+// import FoodApp from './stateUI/food/FoodApp'
+// import Hover from './stateUI/hoverCard'
+// import ToolTip from './stateUI/toolTip'
+// import DropDown from './stateUI/dropDown'
+// import DropDown02 from './stateUI/dropDown02'
+// import HoverTabMenu from './stateUI/hoverTabMenu'
+// import Changimg02 from './stateUI/changeImg02'
+// import Changimg03 from './stateUI/changeImg03'
+// import Changimg04 from './stateUI/changeImg04★'
+import TableApp from './stateUI/TableOrder/TableApp'
 
 
 
@@ -45,7 +54,16 @@ function App() {
         {/* <BlogC /> */}
         {/* <Newmovie /> */}
         {/* <ShopApp /> */}
-        <FoodApp />
+        {/* <FoodApp /> */}
+        {/* <Hover />
+        <ToolTip /> */}
+        {/* <DropDown /> */}
+        {/* <DropDown02 />
+        <HoverTabMenu />
+        <Changimg02 />
+        <Changimg03 />
+        <Changimg04 /> */}
+        <TableApp />
     </>
   )
 }

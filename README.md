@@ -238,8 +238,6 @@
                 = {modalOpen ? <Modal /> : null}
                 • modalOpen이 true일 때만 <Modal />을 렌더링
 
-
-##2025-10-27
 # 컴포넌트 분리하고 props로 연결
                 • 컴포넌트로 분리하고 props로 연결한다.
                 • state는 부모에, UI와 입력은 자식에게
@@ -254,3 +252,35 @@
 # 오브젝트 빈 배열 후 id 부여 팁
                 • id: 배열명.length를 인덱스로 사용 시 삭제 이슈가 있을 수 있기에 
                 • id: Date.now() 쓰면 중복없이 할당가능
+
+# onMouseOver - 요소나 자식 요소 위로 마우스가 올라갈 때마다 발생
+        const handleMouseOver = () => {setMsg('마우스가 올라왔습니다 (Over)'); };
+# onMouseEnter - 요소 위로 마우스가 처음 진입할 때만 발생 (자식 요소 무시)
+        const handleMouseEnter = () => { setMsg('마우스가 진입했습니다 (Enter)’); };
+# onMouseLeave - 요소에서 마우스가 벗어날 때 발생
+        const handleMouseLeave = () => { setMsg('마우스가 벗어났습니다 (Leave)’); };
+# onMouseOut - 요소나 자식 요소에서 마우스가 벗어날 때 발생
+        const handleMouseOut = () => { setMsg('마우스가 나갔습니다 (Out)’); };
+
+# 배열이름.filter()
+                • 무엇을 반환하나: 조건을 만족하는 모든 요소들의 새로운 배열. 만족하는 요소가 없으면 빈
+                배열 [ ] 반환.
+                • 용도: 여러 항목을 추출할 때(예: 삭제, 검색 결과, 특정 조건의 모든 요소 추출).
+                • 원본 배열 변경 여부: 원본을 변경하지 않고 새 배열을 반환.
+                • 배열이름.filter((요소, 인덱스, 배열) => { return 조건식; } );
+                
+# const totalPrice = props.order.reduce((sum, item) => sum + item.price * item.quantity, 0);
+                • props.order 배열의 모든 항목을 돌면서
+                        각 상품의 가격(price) × 수량(quantity) 값을 합산해
+                        전체 주문 금액(totalPrice)을 구한다.
+                • reduce()는 배열의 모든 요소를 순회하면서
+                        이전까지의 누적값(sum)과 현재 요소(item)를 가지고 하나의 값으로 줄이는 함수
+                • array.reduce((누적값, 현재요소) => { ... }, 초기값);
+| 부분                                 | 의미                          |
+| ---------------------------------- | --------------------------- |
+| `props.order`                      | 주문 목록 배열                    |
+| `.reduce()`                        | 배열의 모든 요소를 하나의 값으로 축약       |
+| `(sum, item)`                      | `sum`은 누적 합계, `item`은 현재 항목 |
+| `sum + item.price * item.quantity` | 각 상품의 **가격 × 수량**을 더함       |
+| `, 0`                              | 누적의 **초기값 0** 설정            |
+| `totalPrice`                       | 전체 주문 금액이 저장됨               |
