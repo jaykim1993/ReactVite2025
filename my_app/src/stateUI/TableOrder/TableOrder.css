@@ -211,12 +211,21 @@
     font-size: 14px;
 }
 .orderInfo{
-    width: 80%;
+    width: 90%;
     height: 200px;
     font-size: 14px;
     text-align: left;
     padding: 20px;
-    line-height: 25px;
+    line-height: 10px;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    overflow-y: auto;
+    overflow-x: hidden;
+}
+.orderList{
+    display: inline-block;
+    width: 65%;
+    
 }
 .closeBtn{
     position: absolute;

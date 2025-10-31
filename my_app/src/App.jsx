@@ -4,66 +4,77 @@ import './App.css'
 
 
 
-// import MovieReview from './stateComponents/MovieReview.jsx';
-// import ShoppingList from './stateComponents/ShoppingList.jsx';
-// import CommentBoard from './stateComponents/CommentBoard.jsx';
-// import ScoreManager from './stateComponents/ScoreManager.jsx';
-// import TodoList from './stateComponents/TodoList.jsx';
+// 10.28
+// import TableApp from './stateUI/TableOrder/TableApp'
 
-// import ModalChange from './stateUI/ModalChange.jsx';
-// import LoginView from './stateUI/LoginView.jsx';
-// import PromptChange from './stateUI/PromptChange.jsx';
-// import OnToggle from './stateUI/OnToggle.jsx';
-// import AuthApp from './stateUI/member/AuthApp.jsx';
-// import MovieApp from './stateUI/movie/MovieApp.jsx';
+// 10.29
+// import Eff01 from './Effect/Eff01'
+// import Eff02 from './Effect/Eff02'
+// import Eff03 from './Effect/Eff03'
+// import Eff05 from './Effect/Eff05'
+// import UserList from './Effect/UserList'
+// import UserList02 from './Effect/UserList02'
+// import Eff09 from './Effect/Eff09'
 
-// import BlogC from './stateComponents/Blog/blogc.jsx';
-// import Newmovie from './stateUI/movie_선생님/MovieApp.jsx';
-// import ShopApp from './stateUI/shop/ShopApp'
-// import FoodApp from './stateUI/food/FoodApp'
-// import Hover from './stateUI/hoverCard'
-// import ToolTip from './stateUI/toolTip'
-// import DropDown from './stateUI/dropDown'
-// import DropDown02 from './stateUI/dropDown02'
-// import HoverTabMenu from './stateUI/hoverTabMenu'
-// import Changimg02 from './stateUI/changeImg02'
-// import Changimg03 from './stateUI/changeImg03'
-// import Changimg04 from './stateUI/changeImg04★'
-import TableApp from './stateUI/TableOrder/TableApp'
+// 10.30
+// import Ex01 from './Effect/Ex01'
+// import Ex02 from './Effect/Ex02'
+// import Ex03 from './Effect/Ex03'
+// import AutoTimer from './Effect/AutoTimer'
+// import Ex05 from './Effect/Ex05'
+// import Ex06 from './Effect/Ex06'
+// import Ex07 from './Effect/Ex07'
+// import Ex08 from './Effect/Ex08'
+// import Ex09 from './Effect/Ex09'
+// import Ex10 from './Effect/Ex10'
+// import Ex11 from './Effect/Ex11'
 
-
+// 10.31
+// import ExFetch from './JSON/ExFetch'
+// import ExJ01 from './JSON/ExJ01'
+// import ExJ02 from './JSON/ExJ02'
+// import ExJ03 from './JSON/ExJ03'
+// import ExJ04 from './JSON/ExJ04'
+// import ExJ05 from './JSON/ExJ05'
+// import ProductApp from './JSON/Exj06/ProductApp'
+import ExJ07 from './JSON/ExJ07'
 
 function App() {
   
   
   return (
     <>
-        {/* <MovieReview /> */}
-        {/* <ShoppingList /> */}
-        {/* <CommentBoard /> */}
-        {/* <ScoreManager /> */}
-        {/* <TodoList /> */}
 
-        {/* <ModalChange /> */}
-        {/* <LoginView /> */}
-        {/* <PromptChange /> */}
-        {/* <OnToggle /> */}
-        {/* <AuthApp /> */}
-        {/* <MovieApp /> */}
+        {/* <TableApp /> */}
 
-        {/* <BlogC /> */}
-        {/* <Newmovie /> */}
-        {/* <ShopApp /> */}
-        {/* <FoodApp /> */}
-        {/* <Hover />
-        <ToolTip /> */}
-        {/* <DropDown /> */}
-        {/* <DropDown02 />
-        <HoverTabMenu />
-        <Changimg02 />
-        <Changimg03 />
-        <Changimg04 /> */}
-        <TableApp />
+        {/* <Eff01 /> */}
+        {/* <Eff02 /> */}
+        {/* <Eff03 /> */}
+        {/* <Eff05 /> */}
+        {/* <UserList/> */}
+        {/* <UserList02/> */}
+        {/* <Eff09/> */}
+
+        {/* <Ex01 /> */}
+        {/* <Ex02 /> */}
+        {/* <Ex03 /> */}
+        {/* <AutoTimer /> */}
+        {/* <Ex05 /> */}
+        {/* <Ex06 /> */}
+        {/* <Ex07 /> */}
+        {/* <Ex08 /> */}
+        {/* <Ex09 /> */}
+        {/* <Ex10 /> */}
+        {/* <Ex11 /> */}
+        {/* <ExFetch /> */}
+        {/* <ExJ01 /> */}
+        {/* <ExJ02 /> */}
+        {/* <ExJ03 /> */}
+        {/* <ExJ04 /> */}
+        {/* <ExJ05 /> */}
+        {/* <ProductApp /> */}
+        <ExJ07 />
+
     </>
   )
 }
