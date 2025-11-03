@@ -13,10 +13,13 @@ export default function ExJ07() {
     .then((res) => res.json())
     .then((result) => {
       setData(result);
+      setFiltered(result);
     })
     }, []);
-    console.log(data)
-    
+    console.log('데이터 배열: ', data) // 오브젝트배열 콘솔 찍는 법
+    console.log(`데이터 배열: ${data}`) // 백틱쓰면 [object...]으로 찍힘
+  
+
     const viewAllBtn =()=>{
       setFiltered([...data])
     }
@@ -40,8 +43,9 @@ export default function ExJ07() {
       setFiltered(result);
     }
     const rateBtn =()=>{
-      const result = [...data].sort((a, b) => b.rating.rate - a.rating.rate);
-      setFiltered(result);
+      const result = [...data];
+      const sorted = result.sort((a, b) => b.rating.rate - a.rating.rate);
+      setFiltered(sorted);
     }
 
 
@@ -51,15 +55,15 @@ export default function ExJ07() {
       <div className="container">
         <div className="head">
           <h1>RANDOM SHOPPING WHATEVER</h1>
-          <button onClick={viewAllBtn}>전체보기</button>
-          <button onClick={cateBtn}>카테고리</button>
-          <button onClick={rateBtn}>평점순</button>
+          <button onClick={viewAllBtn}>VIEW ALL</button>
+          <button onClick={cateBtn}>CATEGORY</button>
+          <button onClick={rateBtn}>HIGH RATEs</button>
           {isOpen && 
           (<div className='dropdown'>
-            <button onClick={menBtn}>남성의류</button>
-            <button onClick={womenBtn}>여성의류</button>
-            <button onClick={accBtn}>쥬얼리&잡화</button>
-            <button onClick={elecBtn}>가전제품</button>
+            <button onClick={menBtn}>MEN's CLOTHING</button>
+            <button onClick={womenBtn}>WOMEN's CLOTHING</button>
+            <button onClick={accBtn}>JEWELERY</button>
+            <button onClick={elecBtn}>ELECTRONICs</button>
             </div>)}
         </div>
         <div className="wrap">
@@ -68,7 +72,8 @@ export default function ExJ07() {
               <ul>
               <li><div><img src={data.image} style={{width:'200px', height:'280px'}}/></div></li>
               <li><h2>{data.title}</h2></li>
-              <li><h3>${data.price.toLocaleString()}</h3></li>
+              <li><h2>${data.price.toLocaleString()}</h2></li>
+              <li><h3>rate: {data.rating.rate} view: {data.rating.count}</h3></li>
               </ul>
             </div>
           ))}
