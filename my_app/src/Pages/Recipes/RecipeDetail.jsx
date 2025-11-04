@@ -43,8 +43,6 @@ export default function ProdDetail({ data }) {
             ))}
           </ul>
         </div>
-
-        
       </div>
     </div>
   );
