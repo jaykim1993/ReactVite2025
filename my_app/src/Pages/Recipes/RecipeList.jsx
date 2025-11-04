@@ -26,16 +26,37 @@ export default function RecipeList({data}) {
             setFiltered(data.filter(data => data.cuisine === cuisine));
         }
     };
-    
-    // useEffect(() => {
-    //     const updated = filtered.map(item => ({
-    //         ...filtered,like: 0  // 새로운 key/value 추가
-    //     }));
-    //     setFiltered(updated);
-    // }, []);
-    // const likeBtn =(like)=>{{
-    //     setLike()
-    // }}
+
+    // JSON에 직접 오브젝트배열 추가하기
+    useEffect(() => {
+        const updated = data.map(item => 
+            ({ ...item, like: 0 }));
+        setFiltered(updated);
+    }, [data]);
+
+    const increaseLike = (id) => {
+        setFiltered(filtered.map(item =>
+            item.id === id ? { ...item, like: item.like + 1 } : item )
+        );
+    };
+    console.log(data)
+    console.log(filtered)
+
+    // 선생님 방법: JSON에 넣지 않고 데이터 갯수에 맞게 만들어서 계산만 해줌
+    // const defaultLikes = {}
+    // for(let i=0;i<data.length;i++){
+    //     const recip = data[i];
+    //     defaultLikes[recip.id]=0 // 각 레시피 id별로 초기값 0으로 셋
+    // }
+    // const[like, setLike]=useState(defaultLikes)
+
+    // const increaseLike = (id) => {
+    //     const likesCopy = {...like}
+    //     likesCopy[id] = (likesCopy[id] !== undefined? likesCopy[id]:0) + 1
+    //     setLike(likesCopy)
+    // }
+    // console.log(like)
+
 
     return(
         <div className="container">
@@ -62,9 +83,10 @@ export default function RecipeList({data}) {
                             <h2 className="itemname">{item.name}</h2>
                         </div>
                         </Link>
-                        <p className="itemcuisine">{item.cuisine}</p>
-                        <p className="rating">rate: <strong>{item.rating}</strong> view: <strong>{item.reviewCount}</strong></p>
-                        <button>♡ like</button>
+                        <p className="itemcuisine">Cuisine: <b>{item.cuisine}</b></p>
+                        <p className="rating">rate- <strong>{item.rating}</strong> view- <strong>{item.reviewCount}</strong></p>
+                        <button onClick={() => increaseLike(item.id)}>♡ Like {item.like}</button>
+                        {/* <button onClick={() => increaseLike(item.id)}> ❤️ like {like[item.id]}</button> */}
                         </li>
                     </ul>
                     
