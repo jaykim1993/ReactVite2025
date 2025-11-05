@@ -422,5 +422,32 @@
 # Router – DOM이란 ?
         • 리액트에서 페이지 이동(경로 전환) 을 담당하는 라이브러리이다.
         • 전통적인 웹은 A.html, B.html처럼 페이지마다 별도 파일을 불러왔다.
-        • 하지만 리액트는 하나의 HTML 안에서 화면만 바꿔주는 방식(SPA) 으로 동작한다.
+        • 하지만 리액트는 하나의 HTML 안에서 화면만 바꿔주는 방식(SPA) 
+                으로 동작한다.
         • 즉, 실제로는 페이지가 바뀌지 않지만 화면이 바뀌는 것처럼 보이게 만든다.
+
+# Context API란?
+        • React에서 컴포넌트 간 깊은 구조로 props를 계속 전달하는 문제
+                (Prop Drilling) 를 해결하기 위한 전역 상태 관리 도구.
+        • Redux, Recoil 같은 외부 라이브러리 없이도 가능.
+        • 여러 컴포넌트에서 같은 데이터를 써야 할 때
+        • 트리구조에서 손자 이상 자료를 공유받고 싶을 때
+        • 예: 로그인 유저 정보, 다크모드 설정, 언어 설정, 장바구니, 테마 등
+        • props로 계속 내려보내기 귀찮을 때
+| 기능                       | 설명             |
+| ------------------------ | -------------- |
+| `createContext()`        | Context 생성     |
+| `<Provider value={...}>` | 자식들에게 값 공급     |
+| `useContext()`           | Context 값 가져오기 |
+       • import { createContext } from 'react';
+                // Context 생성 (이름은 자유)
+                export const Context이름 = createContext();
+                
+                import { Context이름 } from './Context이름';
+                const { user, setUser } = useContext(Context이름);
+# children 의 의미
+
+        • children 은 React의 특수한 props 중 하나로,
+                컴포넌트 태그 안쪽에 들어가는 모든 JSX를 의미
+        • ThemeProvider 같은 “Provider 컴포넌트”에서 children 을 
+                사용하는 이유는 Provider로 감싸진 모든 컴포넌트에 값을 전달하기 위해서야.

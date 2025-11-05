@@ -9,7 +9,7 @@ export default function Header() {
     <header className="header-container">
       
       <div className="top-menu">
-        <button>로그인</button>
+        <Link to="/login"><button>로그인</button></Link>
         <button>회원가입</button>
         <button>고객센터 ▼</button>
         <button>🛒 / 0</button>

@@ -3,12 +3,11 @@
     text-decoration: none;
 }
 .header-container {
-  width: 100%;
+  width: 1280px;
   border-bottom: 1px solid #ddd;
-  background: #fff;
 }
 .top-menu {
-  width: 100%;
+  width: 1280px;
   display: flex;
   justify-content: flex-end;
   gap: 16px;

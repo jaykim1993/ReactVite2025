@@ -45,10 +45,11 @@ export default function Home({ data }) {
                                 <Link to={`/detail/${item.id}`}>
                                     <div className="imgname">
                                         <img className="itemimg" src={item.image} />
-                                        <h2 className="itemname">{item.name}</h2>
+                                        <b className="itemname">{item.name}</b>
                                     </div>
                                 </Link>
                                 <p className="itemcuisine">Cuisine: <b>{item.cuisine}</b></p>
+                                <span> View- <strong>{item.reviewCount}</strong></span>
                                 <div className="rating"> 
                                     {item.rating >= 4.8 ? 
                                             <span><img className="star" src={star}/><img className="star" src={star}/><img className="star" src={star}/><img className="star" src={star}/><img className="star" src={star}/></span>:
@@ -56,7 +57,6 @@ export default function Home({ data }) {
                                             <span><img className="star" src={star}/><img className="star" src={star}/><img className="star" src={star}/><img className="star" src={star}/></span>: 
                                             <span><img className="star" src={star}/><img className="star" src={star}/><img className="star" src={star}/></span>
                                     } 
-                                    <p>View- <strong>{item.reviewCount}</strong></p>  
                                 </div>
                                 </li>
                             </ul>

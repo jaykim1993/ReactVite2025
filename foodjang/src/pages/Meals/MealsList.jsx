@@ -77,7 +77,7 @@ export default function MealsList({data}){
     const [isOpenTab, setIsOpenTab] = useState(true);
     const tabHandler = () => setIsOpenTab(!isOpenTab);
 
-    console.log(filtered)
+    // console.log(filtered)
 
     return(
         <>
@@ -111,12 +111,12 @@ export default function MealsList({data}){
                                 </div>
                             </li>
                         </ul>
-                        <div className="close-top" onClick={tabHandler}>↑ 카테고리 숨기기</div>
+                        <div className="close-top" onClick={tabHandler}><p className="hide">↑ 카테고리 숨기기</p></div>
                     </div>
                     )
                     : 
                     (<div className="section-top">
-                        <div className="close-top" onClick={tabHandler}>↓ 카테고리 보이기</div>
+                        <div className="close-top" onClick={tabHandler}><p className="hide">↓ 카테고리 보이기</p></div>
                         </div>
                     )
                 }
@@ -128,7 +128,7 @@ export default function MealsList({data}){
                                 <Link to={`/detail/${item.id}`}>
                                     <div className="imgname">
                                         <img className="itemimg" src={item.image} />
-                                        <h2 className="itemname">{item.name}</h2>
+                                        <b className="itemname">{item.name}</b>
                                     </div>
                                 </Link>
                                 <p className="itemcuisine">Cuisine: <b>{item.cuisine}</b></p>
@@ -139,7 +139,7 @@ export default function MealsList({data}){
                                         <span><img className="star" src={star}/><img className="star" src={star}/><img className="star" src={star}/><img className="star" src={star}/></span>: 
                                         <span><img className="star" src={star}/><img className="star" src={star}/><img className="star" src={star}/></span>
                                     } 
-                                    <p>View- <strong>{item.reviewCount}</strong></p>  
+                                    <br/><span> View- <strong>{item.reviewCount}</strong></span>  
                                 </p>
                                 <button 
                                     className={item.like != 0 ? "btn-active" : "btn"} 
