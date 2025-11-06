@@ -1,5 +1,6 @@
 import { BrowserRouter, Routes, Route } from "react-router-dom"
 import LoginProvider from "./context/LoginContext"
+import PersonalProvider from "./context/PersonalContext"
 import './App.css'
 
 import Header from "./common/Header/Header"
@@ -17,14 +18,16 @@ function App() {
     <>
       <BrowserRouter>
         <LoginProvider>
-          <Header />
-          <Routes>
-            <Route path="/" element={<Home data={data} />} />
-            <Route path="/menus" element={<MealsList data={data} />} />
-            <Route path="/detail/:id" element={<MealDetail data={data} />} />
-            <Route path="/login" element={<Login />} />
-          </Routes>
-          <Footer />
+          <PersonalProvider data={data}>
+            <Header />
+            <Routes>
+              <Route path="/" element={<Home data={data} />} />
+              <Route path="/menus" element={<MealsList data={data} />} />
+              <Route path="/detail/:id" element={<MealDetail data={data} />} />
+              <Route path="/login" element={<Login />} />
+            </Routes>
+            <Footer />
+          </PersonalProvider>
         </LoginProvider>
       </BrowserRouter>
     </>

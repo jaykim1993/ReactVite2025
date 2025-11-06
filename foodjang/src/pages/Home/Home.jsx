@@ -11,26 +11,25 @@ export default function Home({ data }) {
     const [bestFiltered, setBestFiltered] = useState([]);
 
     useEffect(() => {
-        const updated = data.map(item => ({
-            ...item,
-            like: 0,
-            mark: false
-        }));
-        setDataCopy(updated);
+        setDataCopy(data);
     }, [data]);
     
 
     useEffect(() => {
         if (dataCopy.length === 0) return;
         setBestFiltered(
-            dataCopy.filter(item => item.rating >= 4.9)
+            dataCopy.filter(item => item.rating >= 4.9).slice(0,5)
         );
         setItalianFiltered(
-            dataCopy.filter(item => item.cuisine === "Italian")
+            dataCopy.filter(item => item.cuisine === "Italian").slice(0,5)
         );
     }, [dataCopy]);
     
-
+    function getStarCount(rating) {
+        if (rating >= 4.8) return 5;
+        if (rating >= 4.4) return 4;
+        return 3;
+    }
 
     return(
         <>
@@ -51,12 +50,11 @@ export default function Home({ data }) {
                                 <p className="itemcuisine">Cuisine: <b>{item.cuisine}</b></p>
                                 <span> View- <strong>{item.reviewCount}</strong></span>
                                 <div className="rating"> 
-                                    {item.rating >= 4.8 ? 
-                                            <span><img className="star" src={star}/><img className="star" src={star}/><img className="star" src={star}/><img className="star" src={star}/><img className="star" src={star}/></span>:
-                                            item.rating >= 4.4 ? 
-                                            <span><img className="star" src={star}/><img className="star" src={star}/><img className="star" src={star}/><img className="star" src={star}/></span>: 
-                                            <span><img className="star" src={star}/><img className="star" src={star}/><img className="star" src={star}/></span>
-                                    } 
+                                    <span>
+                                    {Array(getStarCount(item.rating))
+                                        .fill(0)
+                                        .map((_, i) => <img key={i} className="star" src={star} />)}
+                                    </span>
                                 </div>
                                 </li>
                             </ul>
