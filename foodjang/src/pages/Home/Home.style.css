@@ -1,0 +1,25 @@
+.section-container{
+  width: 1280px;
+  margin-top: 50px;
+  margin: 0 auto;
+}
+.section-main {
+  width: 1280px;
+  justify-content: center;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 16px;
+  margin: 0 auto;
+}
+.intro {
+  margin-top: 100px;
+  width: 1280px;
+}
+
+h2 {
+  margin-top: 100px;
+  text-align: center;
+}
+
+
+

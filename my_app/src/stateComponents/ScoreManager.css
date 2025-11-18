@@ -1,0 +1,15 @@
+.good{
+  position: absolute;
+  background-color: blue;
+  color: white;
+  padding: 15px;
+  border-radius: 50%;
+  right: 5px;
+  top: 5px;
+  font-weight: bold;
+}
+.list{
+  border: 1px solid black;
+  margin-top: 20px;
+  position: relative;
+}

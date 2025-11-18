@@ -1,0 +1,81 @@
+/* 전체 래퍼 */
+.address-wrap {
+  display: flex;
+  width: 514px;
+  flex-direction: column;
+  gap: 10px;
+}
+
+
+.address-wrap input:focus {
+  border-color: #007aff;
+  box-shadow: 0 0 4px rgba(0, 122, 255, 0.3);
+}
+
+input #userAddress{
+  width: 620px;
+}
+#userAddSearch {
+  padding: 12px 14px;
+  background: #818181;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  font-size: 14px;
+  cursor: pointer;
+  transition: 0.2s ease;
+  width: 150px;
+}
+
+#userAddSearch:hover {
+  background: #005fcc;
+}
+
+.post-row {
+  display: flex;
+  gap: 8px;
+}
+
+#detailAddress {
+  background: #fafafa;
+}
+
+/* 🩶 오버레이 (화면 전체 덮기) */
+.modalOverlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5); /* 반투명 검정 */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 999;
+}
+.modalBox {
+  background: white;
+  padding: 30px;
+  width: 500px;
+  height: 600px;
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+  position: relative;
+}
+
+.closeBtn {
+  position: absolute;
+  top: 2px;
+  right: 2px;
+  background: none;
+  border: none;
+  font-size: 14px;
+  cursor: pointer;
+  z-index: 10;
+  color: #919191;
+}
+
+.closeBtn:hover {
+  color: rgb(0, 0, 0);
+}

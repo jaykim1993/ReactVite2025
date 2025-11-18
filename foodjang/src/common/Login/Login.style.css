@@ -1,0 +1,111 @@
+.wrap{
+    width: 1280px;
+    height: 853.31px;
+    margin: 100px auto;
+    background-image: url('../../pages/intro.png');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat; 
+    position: relative;
+}
+.overlay{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: inherit;
+    height: inherit;
+    background: rgba(255, 255, 255, 0.425);
+    z-index: 999;                 
+}
+.login-container {
+    width: 500px;
+    margin: 0 auto;
+    transform: translateY(140px);
+    padding: 50px;
+    background: #ffffff;
+    border-radius: 10px;
+    border: 1px solid #e0e0e0;
+    box-shadow: 0 4px 16px rgba(0,0,0,0.4);
+    text-align: center;
+}
+.login-container .homeBtn{
+    transform: translate3d(260px, -40px, 0);
+    font-size: 40px;
+    border: none;
+    background-color: inherit;
+    cursor: pointer;
+    color: #555;
+}
+.login-container .homeBtn:hover{
+    color: #222;   
+}
+.login-container h2 {
+    font-size: 30px;
+    margin-bottom: 28px;
+    transform: translateY(-50px);
+}
+.login-container ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+.login-container li {
+    margin-bottom: 15px;
+}
+.inputbox {
+    width: 100%;
+    padding: 15px 0;
+    font-size: 15px;
+    text-indent: 20px;
+    border: 1px solid #dcdcdc;
+    border-radius: 8px;
+    outline: none;
+    transition: 0.2s;
+}
+.inputbox:focus {
+    border-color: #acacac;
+}
+
+.login-btn {
+    width: 100%;
+    padding: 14px 0;
+    font-size: 16px;
+    font-weight: 600;
+    background: #ff8c42;
+    border: 1px solid #ff8c42;
+    color: white;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+.login-btn:hover {
+    background: #ff7a1f;
+}
+.login-bottom {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    margin-top: 15px;
+}
+.bottom-btn {
+    border: none;
+    background: inherit;
+    font-size: 15px;
+    color: #555;
+    cursor: pointer;
+    padding: 4px 6px;
+}
+.bottom-btn:hover {
+    color: #222;
+    text-decoration: underline;
+}
+.login-checkbox {
+    display: flex;
+    align-items: center;
+    width: 16px;
+    height: 16px;
+    gap: 8px;
+}
+.login-checkbox input[type="checkbox"] {
+    accent-color: #ff7a1f;
+}

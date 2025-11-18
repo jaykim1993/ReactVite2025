@@ -1,0 +1,57 @@
+.wishwrap{
+  width: 1200px;
+  margin: 100px auto;
+  display: flex;
+  flex-direction: column;
+  gap: 30px; 
+  padding: 20px;
+  border-radius: 16px;
+  background: #fff;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+}
+.wishlist{
+  text-align: left;
+  font-size: 20px;
+}
+.wishlist-section{
+  background: #fafafa;
+  padding: 20px;
+  border-top: 5px solid #ffb347;
+}
+.eachlist{
+ display: flex;
+ gap: 20px;
+ transition: 0.3s;
+}
+.eachlist:hover{
+    background-color: rgba(106, 107, 107, 0.479);
+}
+.it{
+    width: 100px;
+    height: 100px;
+    transform: translateY(10px);
+    border-radius: 10px;
+}
+.listText{
+    width: 500px;
+    line-height: 30px;
+    transform: translateY(-30px);
+    font-size: 25px;
+    color: #333;
+    font-weight: bold;
+    padding-top: 60px;
+    padding-left: 50px;
+}
+.remover{
+    width: 100px;
+    height: 50px;
+    background: #ff8c42;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    margin-left: 300px;
+    text-align: center;
+    transform: translateY(30px);
+    line-height: 50px;
+}
